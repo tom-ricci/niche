@@ -1,2 +1,2 @@
-# frontniche
-Random pieces of frontend code I find useful.
+# niche
+Random pieces of code I find useful.
