@@ -1,5 +1,5 @@
 {
-  "name": "niche",
+  "name": "@tom-ricci/niche",
   "version": "1.0.0",
   "description": "Code and abstracted methods I find useful.",
   "main": "index.js",
