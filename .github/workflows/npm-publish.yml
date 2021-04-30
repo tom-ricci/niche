@@ -18,6 +18,8 @@ jobs:
       - run: |
           npm install -g npm
           npm ci
+          git config --global user.email "rta@thomasricci.dev"
+          git config --global user.name "RTA"
           npm version major
           
   publish-npm:
