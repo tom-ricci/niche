@@ -18,21 +18,7 @@ jobs:
       - run: |
           npm install -g npm
           npm ci
-          FULLVER=${GITHUB_REF##*/}
-          VER=${FULLVER: 5}
-          MAJOR=${VER: 1}
-          COMBINED=${VER: 3}
-          MINOR=${COMBINED: -1}
-          PATCH=${VER: -1}
-          if ! ["$PATCH" = "0"]
-          then
-            npm version patch
-          elif ! ["$MINOR" = "0"]
-          then
-            npm version minor
-          else
-            npm version major
-          fi
+          npm version major
           
   publish-npm:
     needs: build
