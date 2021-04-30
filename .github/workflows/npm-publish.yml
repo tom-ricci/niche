@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 12
       - run: |
+          npm install -g npm
           npm ci
           FULLVER=${GITHUB_REF##*/}
           VER=${FULLVER: 5}
