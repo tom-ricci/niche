@@ -1,4 +1,7 @@
-import {fetchJSON, fetchText} from "./modules/fetcher/fetcher.js";
+// import {fetchJSON, fetchText} from "./modules/fetcher/fetcher.js";
+let fetcher = require("./modules/fetcher/fetcher.js");
+let fetchJSON = fetcher.fetchJSON();
+let fetchText = fetcher.fetchText();
 
 const err =
   "Something went wrong. Check the wiki, and if you used this correctly, create an issue on github!";
