@@ -6,10 +6,10 @@ module.exports = function fetchJSON(url) {
   );
 };
 
-module.exports function fetchText(url) {
+module.exports = function fetchText(url) {
   fetch(url).then((response) =>
     response.text().then((data) => {
       return data;
     })
   );
-}
+};
