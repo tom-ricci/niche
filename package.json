@@ -1,6 +1,6 @@
 {
   "name": "@tom-ricci/niche",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Code and abstracted methods I find useful.",
   "main": "index.js",
   "scripts": {
