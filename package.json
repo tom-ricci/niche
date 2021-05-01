@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/tom-ricci/niche/issues"
   },
-  "homepage": "https://github.com/tom-ricci/niche#readme"
+  "homepage": "https://github.com/tom-ricci/niche#readme",
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
 }

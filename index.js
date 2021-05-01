@@ -1,13 +1,24 @@
-import {fetchJSON, fetchText} from "./fetcher/fetcher.js";
+import {fetchJSON, fetchText} from "./modules/fetcher/fetcher.js";
 
-const err = "Something went wrong. Check the wiki, and if you used this correctly, create an issue on github!";
+const err =
+  "Something went wrong. Check the wiki, and if you used this correctly, create an issue on github!";
 
-module.exports = function fetch(ft, url) {
-  if(ft === 0) {
-    return fetchJSON(url);
-  }else if(ft === 1) {
-    return fetchText(url)
+module.exports = function (niche) {
+  if(niche.type === Object) {
+    if(niche.module === "fetcher" && niche.args[0] != null && niche.args[1] != null) {
+      const ft = niche.args[0];
+      const url = niche.args[1];
+      if(ft === 0) {
+        return fetchJSON(url);
+      }else if(ft === 1) {
+        return fetchText(url);
+      }else{
+        return err;
+      }
+    }else{
+      return err;
+    }
   }else{
-     return err
+    return err;
   }
-}
+};
