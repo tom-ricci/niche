@@ -1,17 +1,14 @@
 const err = "Something went wrong. Check the wiki, and if you used this correctly, create an issue on github!";
 
 module.exports = function(niche) {
-  if(niche.type === Object) {
-    if(niche.module === "fetcher" && niche.args[0] != null && niche.args[1] != null) {
-      const ft = niche.args[0];
-      const url = niche.args[1];
-      if(ft === 0) {
-        return fetchJSON(url);
-      }else if(ft === 1) {
-        return fetchText(url);
-      }else{
-        return err;
-      }
+  if(niche.module === "fetcher" && niche.args[0] != null && niche.args[1] != null && niche.args[2] != null) {
+    const ft = niche.args[0];
+    const url = niche.args[1];
+    const action = niche.args[2];
+    if(ft === 0) {
+      return fetchJSON(url, action);
+    }else if(ft === 1) {
+      return fetchText(url, action);
     }else{
       return err;
     }
@@ -28,18 +25,18 @@ module.exports = function(niche) {
 *
 * */
 
-function fetchJSON(url) {
+function fetchJSON(url, action) {
   fetch(url).then((response) =>
     response.json().then((data) => {
-      return data;
+      action(data);
     })
   );
 }
 
-function fetchText(url) {
+function fetchText(url, action) {
   fetch(url).then((response) =>
     response.text().then((data) => {
-      return data;
+      action(data);
     })
   );
 }
