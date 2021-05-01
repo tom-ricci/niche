@@ -1,12 +1,12 @@
-export function fetchJSON(url) {
+module.exports = function fetchJSON(url) {
   fetch(url).then((response) =>
     response.json().then((data) => {
       return data;
     })
   );
-}
+};
 
-export function fetchText(url) {
+module.exports function fetchText(url) {
   fetch(url).then((response) =>
     response.text().then((data) => {
       return data;
